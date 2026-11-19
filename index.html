@@ -2405,21 +2405,21 @@ $('#eixos-voltar').onclick=()=>{show('mapa');abrirBoasPraticas()};
 $('#eixos-inicio').onclick=()=>show('capa');
 
 /* =====================================================================
-   PROGRAMAÇÃO — conforme "Programação-III Encontro.pdf" (23 a 27/11/2026).
-   Cada atividade: [horário como no PDF, início (min), fim (min), atividade].
+   PROGRAMAÇÃO — referência oficial: "Programacao 18-11 2.pdf" (23 a 27/11/2026).
+   Cada atividade: [horário conforme PDF, início (min), fim (min), atividade].
    Atividades sem horário final não recebem duração presumida.
 ===================================================================== */
 const CAP_LIDER = 'Capacitação em Liderança';
 const CAP_CONSC = 'Curso de Comunicação Consciente e Atenção Psicossocial NR-01';
 const PROG = [
   {d:'2026-11-23',sem:'Seg',nome:'Segunda-feira',dm:'23/11',itens:[
-    ['08h às 09h',480,540,'Credenciamento'],
-    ['09h às 10h',540,600,'Boas Vindas'],
-    ['10h às 12h',600,720,'Mesa de Abertura'],
+    ['08h às 09h',480,540,'Credenciamento e acolhimento'],
+    ['09h às 10h',540,600,'Mesa de abertura'],
+    ['10h às 12h',600,720,'Dinâmica de apresentação dos participantes'],
     ['12h às 14h',720,840,'Almoço'],
-    ['14h às 16h',840,960,'Balanço da implantação da rede territorial'],
+    ['14h às 16h',840,960,'Escuta da Rede Territorial'],
     ['16h às 16h15',960,975,'Coffee break'],
-    ['16h15 às 18h',975,1080,'Rede territorial em foco']
+    ['16h15 às 18h',975,1080,'Avanços e desafios da Rede Territorial']
   ]},
   {d:'2026-11-24',sem:'Ter',nome:'Terça-feira',dm:'24/11',itens:[
     ['08h às 12h',480,720,CAP_LIDER],
@@ -2430,28 +2430,27 @@ const PROG = [
   ]},
   {d:'2026-11-25',sem:'Qua',nome:'Quarta-feira',dm:'25/11',itens:[
     ['08h às 12h',480,720,CAP_CONSC],
-    ['12h às 14h',720,840,'Almoço'],
-    ['14h às 16h',840,960,CAP_CONSC],
+    ['12h às 13h',720,780,'Almoço'],
+    ['13h às 16h',780,960,CAP_CONSC],
     ['16h às 16h15',960,975,'Coffee break'],
-    ['16h15 às 18h',975,1080,CAP_CONSC],
-    ['19h',1140,null,'Coquetel de abertura exposição CCBB: “Corpos e Territórios – Cuidados e Bem Viver na Saúde Indígena”']
+    ['16h15 às 17h',975,1020,CAP_CONSC],
+    ['18h às 22h',1080,1320,'Coquetel de abertura exposição CCBB: “Corpos e Territórios - Cuidados e Bem Viver na Saúde Indígena”']
   ]},
   {d:'2026-11-26',sem:'Qui',nome:'Quinta-feira',dm:'26/11',itens:[
-    ['08h às 10h',480,600,'Alinhamento institucional: ULOG - Sistema de Viagens'],
-    ['10h às 12h',600,720,'Alinhamento institucional: UGP - SIGEPSI'],
+    ['08h às 12h',480,720,'DIOP: Alinhamento institucional: NEIS, ULOG e UGP.'],
     ['12h às 14h',720,840,'Almoço'],
-    ['14h30 às 16h30',870,990,'Diálogo sobre o Plano de Trabalho de 2027'],
-    ['16h30 às 17h',990,1020,'Coffee break'],
-    ['17h às 18h30',1020,1110,'USI - Processo Seletivo']
+    ['14h às 16h',840,960,'Diálogo sobre o Plano de Trabalho de 2027 (SESAI)'],
+    ['16h às 16h15',960,975,'Coffee break'],
+    ['16h15 às 18h00',975,1080,'USI: Alinhamento institucional: Recrutamento e seleção para saúde indígena']
   ]},
   {d:'2026-11-27',sem:'Sex',nome:'Sexta-feira',dm:'27/11',itens:[
-    ['08h às 10h',480,600,'Visita a Sede da AgSUS'],
-    ['10h30 às 12h',630,720,'UAE - Agora Tem Especialistas (Sede da AgSUS)'],
+    ['08h às 10h',480,600,'UFOC: Alinhamento institucional: Finanças e orçamento/Cartão de Suprimentos (FLASH)'],
+    ['10h às 11h',600,660,'UAE: Alinhamento institucional: Programa Agora Tem Especialistas'],
+    ['11h às 12h',660,720,'Visita às unidades da Agência'],
     ['12h às 14h',720,840,'Almoço'],
-    ['14h às 16h30',840,990,'Apresentação - 4 apresentações dos melhores'],
-    ['Sem horário',null,null,'Premiação - Boas Práticas'],
-    ['16h30 às 17h',990,1020,'Mesa de Encerramento'],
-    ['17h',1020,null,'Coffee break de Encerramento']
+    ['14h às 16h30',840,990,'Apresentação e premiação das “Boas Práticas” vencedoras'],
+    ['16h30 às 17h',990,1020,'Avaliação e encerramento'],
+    ['17h',1020,null,'Coffee break de encerramento']
   ]}
 ];
 /* relógio: o do computador; para testar, abra com ?agora=2026-11-24T10:30 */
