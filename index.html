@@ -1283,6 +1283,16 @@ html.fluid #prog .hint{overflow-wrap:anywhere}
 #lbls .lbl.gx{opacity:0}
 #lbls .lead{stroke:var(--cream);opacity:.55;pointer-events:none}
 #lbls.moving .lead{opacity:0}
+
+/* === Brilho deslizante continuo nos botoes (Ver distribuicao, filtros, Acessar plataforma) === */
+@keyframes totemShine{0%{left:-60%}55%{left:130%}100%{left:130%}}
+.bp-chart-link,.bpf button,.bpgo{position:relative;overflow:hidden}
+.bp-chart-link::after,.bpf button::after,.bpgo::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:rgba(255,255,255,.22);transform:skewX(-20deg);animation:totemShine 3s ease-in-out infinite;pointer-events:none;z-index:2}
+@keyframes totemPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.ver{animation:totemPulse 1.5s ease-in-out infinite;transform-origin:center;will-change:transform}
+@keyframes totemMapa{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.c-brazil{animation:totemMapa 2.4s ease-in-out infinite;transform-origin:center;will-change:transform}
+@media (prefers-reduced-motion:reduce){.bp-chart-link::after,.bpf button::after,.bpgo::after{display:none}.ver{animation:none}.c-brazil{animation:none}}
 </style>
 
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
