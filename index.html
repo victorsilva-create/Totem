@@ -2088,7 +2088,7 @@ function abrirBoasPraticas(filtro){
     ...(semEixo?[`<option value="sem-eixo">Sem eixo atribuído (${semEixo})</option>`]:[])].join('');
   const barra=`<button type="button" class="bp-chart-link" id="bp-chart-open">Ver distribuição dos eixos · Gráfico interativo</button><div class="bpf" role="group" aria-label="Tipo de escritório">`+BP_FILTROS.map(([k,nome,tp])=>{
     const n=tp?base.filter(e=>e.tipo===tp).length:base.length,on=k===bpFiltro;
-    return `<button type="button" class="${on?'on':''}" data-f="${k}" aria-pressed="${on}">${nome}<span>${n}</span></button>`}).join('')+`</div><a class="bp-chart-link bp-external-link" id="bp-acesso-externo" href="https://script.google.com/macros/s/AKfycbzBU0xZ_vhhJ9wBysER1VFQrEZCwb28wlcnG85mihqFfrEb4GJlCBfhkS4CZQ-UoNshVg/exec" target="_blank" aria-label="Acessar plataforma de votação de boas práticas (abre em nova aba)">Acessar plataforma de votação de boas práticas <span aria-hidden="true">↗</span></a>`;
+    return `<button type="button" class="${on?'on':''}" data-f="${k}" aria-pressed="${on}">${nome}<span>${n}</span></button>`}).join('')+`</div><a class="bp-chart-link bp-external-link" id="bp-acesso-externo" href="https://script.google.com/macros/s/AKfycbzBU0xZ_vhhJ9wBysER1VFQrEZCwb28wlcnG85mihqFfrEb4GJlCBfhkS4CZQ-UoNshVg/exec" aria-label="Acessar plataforma de votação de boas práticas">Acessar plataforma de votação de boas práticas <span aria-hidden="true">↗</span></a>`;
   const filtros=`<div class="bp-tools"><div class="bp-field"><label for="bp-eixo-select">Eixo temático</label>
     <select id="bp-eixo-select" aria-label="Filtrar boas práticas por eixo">${opcoes}</select></div>
     <div class="bp-field"><label for="bp-busca">Buscar boa prática ou escritório</label>
