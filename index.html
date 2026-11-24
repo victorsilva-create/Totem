@@ -2668,3 +2668,41 @@ function betComemora(){
 fit();medir();
 reset(true);
 </script>
+
+<script>
+/* TOTEM_AUTO_ATUALIZACAO - recarrega sozinho para pegar codigo novo */
+(function(){
+  var HORA_DIARIA   = 7;   // recarrega todo dia as 07:00
+  var INTERVALO_MIN = 60;  // tenta recarregar a cada 60 minutos
+  var OCIOSO_MIN    = 2;   // so recarrega se ninguem mexer ha 2 minutos
+
+  var carregadoEm  = Date.now();
+  var ultimoToque  = Date.now();
+
+  ['touchstart','pointerdown','mousedown','keydown','click'].forEach(function(ev){
+    window.addEventListener(ev, function(){ ultimoToque = Date.now(); }, {passive:true});
+  });
+
+  function ocioso(){ return (Date.now() - ultimoToque) >= OCIOSO_MIN*60000; }
+
+  function recarregar(){
+    try { location.replace(location.pathname + '?v=' + Date.now()); }
+    catch(e) { location.reload(); }
+  }
+
+  // 1) periodico: so quando ninguem esta usando
+  setInterval(function(){
+    if (Date.now() - carregadoEm < INTERVALO_MIN*60000) return;
+    if (!ocioso()) return;
+    recarregar();
+  }, 60000);
+
+  // 2) diario no horario definido
+  setInterval(function(){
+    var a = new Date();
+    if (a.getHours() === HORA_DIARIA && a.getMinutes() === 0){
+      if (Date.now() - carregadoEm > 5*60000) recarregar();
+    }
+  }, 30000);
+})();
+</script>
